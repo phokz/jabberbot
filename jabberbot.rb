@@ -70,6 +70,19 @@ bot.add_command(
   system("notify-send '#{message} from #{sender}'")
 end
 
+bot.add_command(
+:syntax      => 'exit',
+:description => 'Ukonci sam sebe s exit kodem 0',
+:regex       => /^exit$/
+) { exit(0) }
+
+bot.add_command(
+:syntax      => 'restart',
+:description => 'Ukonci sam sebe s exit kodem 1, pokud je spusten pres wrapper, restartne se',
+:regex       => /^restart$/
+) { exit(1) }
+
+
 
 bot.add_command(
 :syntax      => 'videjo',
